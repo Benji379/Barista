@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/registerProducto.css">
+	<link rel="icon" href="img/icono.ico">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.all.min.js"
+		integrity="sha256-LkC+rZzbNkEleBllGdKANe5nxH0QnRjn4hbw2lW+Hjo=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.min.css"
+		integrity="sha256-VJuwjrIWHWsPSEvQV4DiPfnZi7axOaiWwKfXaJnR5tA=" crossorigin="anonymous">
+	<script src="js/registrarProducto.js"></script>
+	<style>
+		/* Estilos para el input de tipo file */
+		.file-input-wrapper {
+			position: relative;
+			width: 480px;
+		}
+
+		.file-input {
+			opacity: 0;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			cursor: pointer;
+		}
+
+		.file-input-label {
+			display: inline-block;
+			width: 100%;
+			padding: 10px;
+			background-color: transparent;
+			/* Mantenemos el fondo transparente */
+			border: solid 1px #b3aca7;
+			/* Utilizamos el mismo borde que para otros inputs */
+			color: #ffffff;
+			/* Color del texto similar a otros inputs */
+			font-family: 'Lato', sans-serif;
+			font-size: 0.875em;
+			text-align: center;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+		}
+
+		/* Estilos para el input de tipo file al pasar el mouse */
+		.file-input-label:hover {
+			background-color: #b3aca7;
+			/* Cambiamos el fondo al pasar el mouse */
+			color: #e2dedb;
+			/* Cambiamos el color del texto al pasar el mouse */
+		}
+
+		html {
+			position: relative;
+			color: rgb(0, 0, 0);
+			padding: 20px;
+		}
+
+		html::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-image: url('img/banner.jpg');
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			filter: brightness(1.3);
+			/* Oscurece la imagen */
+			z-index: -1;
+			/* Asegura que el overlay esté detrás del contenido */
+		}
+
+		html::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+			/* Overlay oscuro semitransparente */
+			z-index: -1;
+			/* Asegura que el overlay esté detrás del contenido */
+		}
+	</style>
+</head>
+
+<body>
+	<header>REGISTRAR PRODUCTO</header>
+	<form id="form" class="topBefore">
+		<input id="name" type="text" placeholder="Nombre Producto">
+		<input id="precio" type="number" placeholder="10.00">
+		<div class="file-input-wrapper">
+			<label for="imagen" class="file-input-label">Cargar Imagen</label>
+			<input id="imagen" type="file" class="file-input">
+		</div>
+		<textarea id="message" type="text" placeholder="Descripcion de producto"></textarea>
+		<input id="submit" type="submit" value="Registrar">
+	</form>
+
+</body>
+
+</html>

@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/icono.ico">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="css/cardsProductos.css">
+        <script src="js/cargarProductos.js"></script>
+    <style>
+        /* Custom Styles */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --primary-color: #c7a17a;
+            --background-color: #f9f5f0;
+            --dark-color: #151515;
+        }
+
+        html {
+            font-size: 62.5%;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Override Bootstrap's default font-family */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Custom Utilities */
+        .container {
+            max-width: 120rem;
+            margin: 0 auto;
+        }
+
+        .heading-1 {
+            text-align: center;
+            font-weight: 500;
+            font-size: 3rem;
+        }
+
+        /* Custom Navbar Styles */
+        .navbar {
+            background-color: var(--primary-color);
+        }
+
+        .navbar-brand {
+            color: var(--dark-color);
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--dark-color);
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .search-form {
+            background-color: #fff;
+            border: 2px solid #fff;
+            border-radius: 2rem;
+            overflow: hidden;
+        }
+
+        .search-form input {
+            width: 25rem;
+            font-size: 1.4rem;
+            padding: 0 2rem;
+            color: #777;
+        }
+
+        .btn-search {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        /* Custom Banner Styles */
+        .banner {
+            background-image: linear-gradient(100deg, #000000, #00000020);
+            height: 60rem;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .content-banner {
+            max-width: 90rem;
+            margin: 0 auto;
+            padding: 25rem 0;
+        }
+
+        .content-banner p {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .content-banner h2 {
+            color: #fff;
+            font-size: 3.5rem;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        .content-banner a {
+            margin-top: 2rem;
+            text-decoration: none;
+            color: #fff;
+            background-color: var(--primary-color);
+            display: inline-block;
+            padding: 1rem 3rem;
+            text-transform: uppercase;
+            border-radius: 3rem;
+        }
+
+        .top-categories {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .top-products{
+            margin-bottom: 3rem;
+        }
+        
+        .container-blogs{
+            margin-bottom: 3rem;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .banner {
+            position: relative;
+            color: rgb(0, 0, 0);
+            padding: 20px;
+        }
+
+
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('img/banner.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: brightness(1.3);
+            /* Oscurece la imagen */
+            z-index: -1;
+            /* Asegura que el overlay esté detrás del contenido */
+        }
+
+        .banner::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Overlay oscuro semitransparente */
+            z-index: -1;
+            /* Asegura que el overlay esté detrás del contenido */
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <img src="img/iconoBarista.png" alt="" height="90px">
+            <a class="navbar-brand" href="#">Barista</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#categorias" id="categorias-link">Categorías</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#productos" id="productos-link">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blog" id="blog-link">Blog</a>
+                    </li>
+                </ul>
+
+                <a href="login.html">
+                    <img src="img/iconoLogin.png" alt="Login" class="float-right" height="50px">
+                </a>
+            </div>
+
+        </div>
+        </div>
+    </nav>
+
+    <!-- Banner Section -->
+    <section class="banner">
+        <div class="container content-banner">
+            <p>Cafetería</p>
+            <h2>Barista</h2>
+            <a href="#">Compra ya</a>
+        </div>
+    </section>
+    <main class="main-content">
+        <section class="container container-features">
+            <div class="card-feature" bis_skin_checked="1">
+                <i class="fa-solid fa-plane-up" aria-hidden="true"></i>
+                <div class="feature-content" bis_skin_checked="1">
+                    <span>Envío gratuito a nivel mundial</span>
+                    <p>En pedido superior a $150</p>
+                </div>
+            </div>
+            <div class="card-feature" bis_skin_checked="1">
+                <i class="fa-solid fa-wallet" aria-hidden="true"></i>
+                <div class="feature-content" bis_skin_checked="1">
+                    <span>Contrareembolso</span>
+                    <p>100% garantía de devolución de dinero</p>
+                </div>
+            </div>
+            <div class="card-feature" bis_skin_checked="1">
+                <i class="fa-solid fa-gift" aria-hidden="true"></i>
+                <div class="feature-content" bis_skin_checked="1">
+                    <span>Tarjeta regalo especial</span>
+                    <p>Ofrece bonos especiales con regalo</p>
+                </div>
+            </div>
+            <div class="card-feature" bis_skin_checked="1">
+                <i class="fa-solid fa-headset" aria-hidden="true"></i>
+                <div class="feature-content" bis_skin_checked="1">
+                    <span>Servicio al cliente 24/7</span>
+                    <p>LLámenos 24/7 al 123-456-7890</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container top-categories">
+            <h1 class="heading-1" id="categorias">Categorías</h1>
+            <div class="container-categories" bis_skin_checked="1">
+                <div class="card-category category-moca" bis_skin_checked="1">
+                    <p>Café moca</p>
+
+                </div>
+                <div class="card-category category-expreso" bis_skin_checked="1">
+                    <p>Expreso Americano</p>
+
+                </div>
+                <div class="card-category category-capuchino" bis_skin_checked="1">
+                    <p>Capuchino</p>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="container top-products">
+            <h1 class="heading-1" id="productos">Productos</h1>
+
+            <div class="container-options" bis_skin_checked="1">
+                <span class="active">Destacados</span>
+                <span>Más recientes</span>
+                <span>Mejores Vendidos</span>
+            </div>
+
+            <div class="container-products" bis_skin_checked="1">
+                <!-- Producto 1 -->
+                <div class="card-product" bis_skin_checked="1">
+                    <div class="container-img" bis_skin_checked="1">
+                        <img src="img/cafe-irish.jpg" alt="Cafe Irish">
+                        <!-- <span class="discount">-13%</span> -->
+                        <div class="button-group" bis_skin_checked="1">
+                            <span>
+                                <i class="fa-regular fa-eye" aria-hidden="true"></i>
+                            </span>
+                            <span>
+                                <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                            </span>
+                            <span>
+                                <i class="fa-solid fa-code-compare" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="content-card-product" bis_skin_checked="1">
+                        <div class="stars" bis_skin_checked="1">
+                            <i class="fa-solid fa-star" aria-hidden="true"></i>
+                            <i class="fa-solid fa-star" aria-hidden="true"></i>
+                            <i class="fa-solid fa-star" aria-hidden="true"></i>
+                            <i class="fa-solid fa-star" aria-hidden="true"></i>
+                            <i class="fa-regular fa-star" aria-hidden="true"></i>
+                        </div>
+                        <h3>Cafe Irish</h3>
+                        <span class="add-cart">
+                            <i class="fa-solid fa-basket-shopping" aria-hidden="true"></i>
+                        </span>
+                        <p class="price">S/11.90</p>
+                    </div>
+                </div>
+                <!-- Producto 2 -->
+                <div class="card-product" bis_skin_checked="1">
+                    <div class="container-img" bis_skin_checked="1">
+                        <img src="img/cafe-ingles.jpg" alt="Cafe incafe-ingles.jpg">
+
+                        <div class="button-group" bis_skin_checked="1">
+                            <span>
+                                <i class="fa-regular fa-eye" aria-hidden="true"></i>
+                            </span>
+                            <span>
+                                <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                            </span>
+                            <span>
+                                <i class="fa-solid fa-code-compare" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="content-card-product" bis_skin_checked="1">
+                        <div class="stars" bis_skin_checked="1">
+                            <i class="fa-solid fa-star" aria-hidden="true"></i>
+                            <i class="fa-solid fa-star" aria-hidden="true"></i>
+                            <i class="fa-solid fa-star" aria-hidden="true"></i>
+                            <i class="fa-regular fa-star" aria-hidden="true"></i>
+                            <i class="fa-regular fa-star" aria-hidden="true"></i>
+                        </div>
+                        <h3>Cafe Inglés</h3>
+                        <span class="add-cart">
+                            <i class="fa-solid fa-basket-shopping" aria-hidden="true"></i>
+                        </span>
+                        <p class="price">S/9.20 </p>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="card-product" bis_skin_checked="1">
+                    <div class="container-img" bis_skin_checked="1">
+                        <img src="img/cafe-australiano.jpg" alt="Cafe Australiano">
+                        <div class="button-group" bis_skin_checked="1">
+                            <span>
+                                <i class="fa-regular fa-eye" aria-hidden="true"></i>
+                            </span>
+                            <span>
+                                <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                            </span>
+                            <span>
+                                <i class="fa-solid fa-code-compare" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="content-card-product" bis_skin_checked="1">
+                        <div class="stars" bis_skin_checked="1">
+                            <i class="fa-solid fa-star" aria-hidden="true"></i>
+                            <i class="fa-solid fa-star" aria-hidden="true"></i>
+                            <i class="fa-solid fa-star" aria-hidden="true"></i>
+                            <i class="fa-solid fa-star" aria-hidden="true"></i>
+                            <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        </div>
+                        <h3>Cafe Australiano</h3>
+                        <span class="add-cart">
+                            <i class="fa-solid fa-basket-shopping" aria-hidden="true"></i>
+                        </span>
+                        <p class="price">S/12.00</p>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="card-product" bis_skin_checked="1">
+                    <div class="container-img" bis_skin_checked="1">
+                        <img src="img/cafe-helado.jpg" alt="Cafe Helado">
+                        <div class="button-group" bis_skin_checked="1">
+                            <span>
+                                <i class="fa-regular fa-eye" aria-hidden="true"></i>
+                            </span>
+                            <span>
+                                <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                            </span>
+                            <span>
+                                <i class="fa-solid fa-code-compare" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="content-card-product" bis_skin_checked="1">
+                        <div class="stars" bis_skin_checked="1">
+                            <i class="fa-solid fa-star" aria-hidden="true"></i>
+                            <i class="fa-solid fa-star" aria-hidden="true"></i>
+                            <i class="fa-solid fa-star" aria-hidden="true"></i>
+                            <i class="fa-solid fa-star" aria-hidden="true"></i>
+                            <i class="fa-regular fa-star" aria-hidden="true"></i>
+                        </div>
+                        <h3>Cafe Helado</h3>
+                        <span class="add-cart">
+                            <i class="fa-solid fa-basket-shopping" aria-hidden="true"></i>
+                        </span>
+                        <p class="price">S/10.50</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery">
+            <img src="img/gallery1.jpg" alt="Gallery Img1" class="gallery-img-1"><img src="img/gallery2.jpg"
+                alt="Gallery Img2" class="gallery-img-2"><img src="img/gallery3.jpg" alt="Gallery Img3"
+                class="gallery-img-3"><img src="img/gallery4.jpg" alt="Gallery Img4" class="gallery-img-4"><img
+                src="img/gallery5.jpg" alt="Gallery Img5" class="gallery-img-5">
+        </section>
+
+
+        <section class="container blogs">
+            <h1 class="heading-1" id="blog">Últimos Blogs</h1>
+
+            <div class="container-blogs" bis_skin_checked="1">
+                <div class="card-blog" bis_skin_checked="1">
+                    <div class="container-img" bis_skin_checked="1">
+                        <img src="img/blog-1.jpg" alt="Imagen Blog 1">
+                        <div class="button-group-blog" bis_skin_checked="1">
+                            <span>
+                                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                            </span>
+                            <span>
+                                <i class="fa-solid fa-link" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="content-blog" bis_skin_checked="1">
+                        <h3>Café artesanal: Un sabor que te transportará</h3>
+                        <span>10 Enero 2024</span>
+                        <p>
+                            En nuestra cafetería barista, cada taza de café es una obra de arte. Elaboramos nuestro café
+                            artesanalmente, utilizando granos de la más alta calidad y técnicas de extracción
+                            meticulosas. El resultado es un café con un sabor intenso y equilibrado, que te transportará
+                            a un mundo de sensaciones únicas.
+                        </p>
+                        <!--<div class="btn-read-more" bis_skin_checked="1">Leer más</div>-->
+                    </div>
+                </div>
+                <div class="card-blog" bis_skin_checked="1">
+                    <div class="container-img" bis_skin_checked="1">
+                        <img src="img/blog-2.jpg" alt="Imagen Blog 2">
+                        <div class="button-group-blog" bis_skin_checked="1">
+                            <span>
+                                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                            </span>
+                            <span>
+                                <i class="fa-solid fa-link" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="content-blog" bis_skin_checked="1">
+                        <h3>El aroma a café perfecto: Tu oasis de tranquilidad</h3>
+                        <span>29 Abril 2024</span>
+                        <p>
+                            En nuestra cafetería barista, encontrarás el lugar perfecto para relajarte y disfrutar de un
+                            buen café. Nuestro ambiente acogedor y nuestro servicio amable te harán sentir como en casa.
+                            Olvídate del estrés del día a día y sumérgete en el aroma a café perfecto.
+                        </p>
+                        <!--<div class="btn-read-more" bis_skin_checked="1">Leer más</div>-->
+                    </div>
+                </div>
+                <div class="card-blog" bis_skin_checked="1">
+                    <div class="container-img" bis_skin_checked="1">
+                        <img src="img/blog-3.jpg" alt="Imagen Blog 3">
+                        <div class="button-group-blog" bis_skin_checked="1">
+                            <span>
+                                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                            </span>
+                            <span>
+                                <i class="fa-solid fa-link" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="content-blog" bis_skin_checked="1">
+                        <h3>Saborea la vida: Disfruta de un café único</h3>
+                        <span>21 mayo 2024</span>
+                        <p>
+                            El café es más que una bebida, es una experiencia. En nuestra cafetería barista, queremos
+                            que cada cliente disfrute de una experiencia única. Te ofrecemos una amplia variedad de
+                            cafés, así como deliciosos acompañamientos para que puedas disfrutar de un momento perfecto.
+                        </p>
+                        <!--<div class="btn-read-more" bis_skin_checked="1">Leer más</div>-->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+    <body>
+        <footer class="footer">
+            <div class="container container-footer">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="contact-info">
+                            <p class="title-footer">Información de Contacto</p>
+                            <ul>
+                                <li>Dirección: 71 Pennington Lane Vernon Rockville, CT 06066</li>
+                                <li>Teléfono: 123-456-7890</li>
+                                <li>Fax: 55555300</li>
+                                <li>EmaiL: baristas@support.com</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="information">
+                            <p class="title-footer">Información</p>
+                            <ul>
+                                <li><a href="#">Acerca de Nosotros</a></li>
+                                <li><a href="#">Información Delivery</a></li>
+                                <li><a href="#">Politicas de Privacidad</a></li>
+                                <li><a href="#">Términos y condiciones</a></li>
+                                <li><a href="#">Contactános</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="my-account">
+                            <p class="title-footer">Mi cuenta</p>
+                            <ul>
+                                <li><a href="#">Mi cuenta</a></li>
+                                <li><a href="#">Historial de ordenes</a></li>
+                                <li><a href="#">Lista de deseos</a></li>
+                                <li><a href="#">Boletín</a></li>
+                                <li><a href="#">Reembolsos</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="newsletter">
+                            <p class="title-footer">Boletín informativo</p>
+                            <div class="content">
+                                <p>Suscríbete a nuestros boletines ahora y mantente al día con nuevas colecciones y
+                                    ofertas exclusivas.</p>
+                                <input type="email" placeholder="Ingresa el correo aquí...">
+
+                                <a href="contact.html">
+                                    <button class="btn btn-primary">Contactanos</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+        <!-- Bootstrap Scripts -->
+        <script src="js/index.js"></script>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+
+</html>
