@@ -1,4 +1,4 @@
-#Cafetería Barista
+# Cafetería Barista
 Proyecto básico usando html, css, js, php y base de datos mysql
 
 
